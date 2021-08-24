@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--
+    Spring自动装配
+
+    byName: 会自动在容器上下文中查找，和自己对象set方法后面的参数相对应的bean id
+    tip: 在byName下 id必须符合相对应对象的属性类型名
+    -->
+    <bean id="dog" class="com.eicoma.javabean.Dog"/>
+    <bean id="cat" class="com.eicoma.javabean.Cat"/>
+
+    <bean id="people" class="com.eicoma.javabean.People" autowire="byName">
+        <property name="name" value="晴明"/>
+    </bean>
+
+</beans>

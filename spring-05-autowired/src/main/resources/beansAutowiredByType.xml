@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--
+    Spring自动装配
+
+    byType: 会自动在容器上下文中查找，和自己对象属性类型相同的bean
+
+    tip: 在byType下 同一个类下创建多个bean对象会报错！
+    -->
+    <bean id="dog22222222" class="com.eicoma.javabean.Dog"/>
+    <!--    <bean id="dog2" class="com.eicoma.javabean.Dog"/>-->
+    <bean id="cat" class="com.eicoma.javabean.Cat"/>
+
+    <bean id="people" class="com.eicoma.javabean.People" autowire="byType">
+        <property name="name" value="晴明"/>
+    </bean>
+
+</beans>
